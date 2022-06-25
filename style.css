@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300&family=Lato:wght@700&family=Roboto+Mono:wght@300&family=Source+Code+Pro&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    background-color: pink;
+}
+.board
+{
+	display: grid;
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    margin: 50px auto 0px auto;
+  
+	width: 300px;
+	height: 300px;
+}
+
+.header{
+    background-color: darkblue;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    font-family: 'Source Code Pro', monospace;
+
+}
+.info{
+    display: flex;
+   justify-content: center;
+   gap: 3rem;
+   margin-top: 0;
+}
+h2{
+    text-align: center;
+    margin-top: 4rem;
+   
+}
+.box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 3rem;
+  font-family: 'Lato', sans-serif;
+ 
+}
+.box:hover{
+    background-color: wheat !important;
+}
+
+h2{
+    font-family: 'Roboto Mono', monospace;
+}
+.buttondiv{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+button{
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    
+    
+}
