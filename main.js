@@ -19,18 +19,23 @@ const winningCondition = [ [1,2,3], [4,5,6], [7,8,9], [1,4,7],[3,6,9],[2,5,8],[1
 
 turn.innerHTML=`Turn: ${cuPlayer == "x"?"X":"O"}`;
 
-
+let flag = false;
 //event Listner
 cells.forEach(e=> e.addEventListener('click',() => {
  
 
+    if(!flag)
+    {
     console.log(e.id);
 
-    turn.innerHTML=`Turn: ${cuPlayer == "x"?"O":"X"}`;
+    
   
+
+    console.log(isEmpty(e.id));
     
     if(isEmpty(e.id))
     {
+        turn.innerHTML=`Turn: ${cuPlayer == "x"?"O":"X"}`;
        
         updateCell(e.id,cuPlayer==="x"?"x":"o");
         if(cuPlayer==="x")
@@ -40,6 +45,7 @@ cells.forEach(e=> e.addEventListener('click',() => {
             {
                 alert(cuPlayer,"has won");
                 updateCounter("x");
+                flag=true;
                 
                 return;
             };
@@ -52,13 +58,14 @@ cells.forEach(e=> e.addEventListener('click',() => {
             {
                 alert(cuPlayer,"has won");
                 updateCounter("o");
-             
+                flag=true;
                 return;
             };
          
         }
         updateRound();
         isFull();
+    }
 
     
 }}));
@@ -110,6 +117,8 @@ function checkWinner()
 function isEmpty(Cell)
 {
     let check = arr.filter(e=> e.Cell==Cell);
+    console.log('check', check);
+    console.log(check.length)
 
     if(check.length===0)
     {
@@ -163,6 +172,7 @@ function restartGame()
     cuPlayer=cuPlayer=="x"?"o":"x";
     turn.innerHTML=`Turn: ${cuPlayer == "x"?"X":"O"}`;
     cells.forEach(e=>e.style.backgroundColor="pink" );
+    flag=false;
 }
 
 resetButton.addEventListener('click',()=>{
@@ -174,6 +184,7 @@ resetButton.addEventListener('click',()=>{
     cells.forEach(e=>e.style.backgroundColor="pink" );
     oCounterElement.innerHTML=0;
     xCounterElement.innerHTML=0;
+    flag=false;
 
 })
 

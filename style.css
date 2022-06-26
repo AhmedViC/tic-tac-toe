@@ -4,6 +4,14 @@ body{
     padding: 0;
     background-color: pink;
 }
+a{
+    color:var(--magenta);
+    
+}
+a:hover{
+    color:var(--hotmag);
+    text-decoration: none;
+}
 .board
 {
 	display: grid;
@@ -15,12 +23,13 @@ body{
 }
 
 .header{
-    background-color: darkblue;
-    padding: 1rem;
+    background-color: #171321;
     display: flex;
     justify-content: center;
     color: white;
     font-size: 3rem;
+    gap: 4rem;
+    padding: 2rem;
     font-family: 'Source Code Pro', monospace;
 
 }
